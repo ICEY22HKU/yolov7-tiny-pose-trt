@@ -66,11 +66,11 @@ python3 --data data/coco_kpts.yaml --cfg cfg/yolov7-tiny-pose.yaml --weights "" 
 ```
 
 2. Run pt2onnx.py, the onnx model will be generated. Use Netron to visualize the onnx model like this:
-![](assets/1.jpg) 
+![](assets/1.png) 
 
 use `YoloLayer_TRT_v7.0/script/add_custom_yolo_op.py` to add a new op lookes like this:
 
-![](assets/2.jpg) 
+![](assets/2.png) 
 
 # Build yolo layer tensorrt plugin
 
