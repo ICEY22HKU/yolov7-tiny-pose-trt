@@ -29,7 +29,7 @@ requirements.txt(run pip3 install -r requirements.txt)
 ```shell
 python3 --data data/coco_kpts.yaml --cfg cfg/yolov7-tiny-pose.yaml --weights "" --batch-size 32 --img 640 --kpt-label --name yolov7-tiny-pose --hyp data/hyp.pose.yaml  
 ```
-4. Fnish training, detect the pt model  
+4. Fnish training, test the pt model  
 
 # Reparameterization the model
 
