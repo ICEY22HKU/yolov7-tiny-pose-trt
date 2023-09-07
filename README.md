@@ -27,7 +27,7 @@ requirements.txt(run pip3 install -r requirements.txt)
 2. Modifiy the network. If you change the network, you should change the network config file in cfg dir  
 3. Train using single GPU by running  
 ```shell
-python3 --data data/coco_kpts.yaml --cfg cfg/yolov7-tiny-pose.yaml --weights "" --batch-size 32 --img 640 --kpt-label --name yolov7-tiny-pose --hyp data/hyp.pose.yaml  
+python3 train.py --data data/coco_kpts.yaml --cfg cfg/yolov7-tiny-pose.yaml --weights "" --batch-size 32 --img 640 --kpt-label --name yolov7-tiny-pose --hyp data/hyp.pose.yaml  
 ```
 4. Finish training, test the pt model  
 
