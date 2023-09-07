@@ -35,7 +35,7 @@ python3 --data data/coco_kpts.yaml --cfg cfg/yolov7-tiny-pose.yaml --weights "" 
 
 1. Add a class Keypoint and use Keypoint instead of IKeypoint in the yolo-tiny.yaml file  
 
-2. Run deploy.py, the reparameterized model will be generated  
+2. Run reparameterization.py, the reparameterized model will be generated  
 
 # Export onnx model  
 
