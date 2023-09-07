@@ -3,9 +3,9 @@ yolov7-tiny-pose detection using TensorRT
 
 
 # Pose detection base on Yolov7-tiny Deploy TensorRT
-Based on https://github.com/WongKinYiu/yolov7
-https://github.com/nanmi/yolov7-pose/tree/main
-https://github.com/wang-xinyu/tensorrtx/tree/master/yolov7
+Based on https://github.com/WongKinYiu/yolov7  
+https://github.com/nanmi/yolov7-pose/tree/main  
+https://github.com/wang-xinyu/tensorrtx/tree/master/yolov7  
 
 # System Requirements
 
@@ -19,23 +19,25 @@ requirements.txt(run pip3 install -r requirements.txt)
 
 # Train the pytorch model using yolov7-pose repository
 
-1. Make the coco pose dataset with 17 keypoints
---Download the coco pose detection dataset https://github.com/WongKinYiu/yolov7/releases/download/v0.1/coco2017labels-keypoints.zip
---Download the coco dataset with the 'person' category by running get_coco_person.py
---Put the dataset in data dir
---Modifiy the coco_kpts.yaml
-2. Modifiy the network. If you change the network, you should change the network config file in cfg dir
-3. Train using single GPU by running 
-python3 --data data/coco_kpts.yaml --cfg cfg/yolov7-tiny-pose.yaml --weights "" --batch-size 32 --img 640 --kpt-label --name yolov7-tiny-pose --hyp data/hyp.pose.yaml
-4. Fnish training, detect the pt model
+1. Make the coco pose dataset with 17 keypoints  
+--Download the coco pose detection dataset https://github.com/WongKinYiu/yolov7/releases/download/v0.1/coco2017labels-keypoints.zip  
+--Download the coco dataset with the 'person' category by running get_coco_person.py  
+--Put the dataset in data dir  
+--Modifiy the coco_kpts.yaml  
+2. Modifiy the network. If you change the network, you should change the network config file in cfg dir  
+3. Train using single GPU by running  
+```shell
+python3 --data data/coco_kpts.yaml --cfg cfg/yolov7-tiny-pose.yaml --weights "" --batch-size 32 --img 640 --kpt-label --name yolov7-tiny-pose --hyp data/hyp.pose.yaml  
+```
+4. Fnish training, detect the pt model  
 
 # Reparameterization the model
 
-1. Add a class Keypoint and use Keypoint instead of IKeypoint in the yolo-tiny.yaml file
+1. Add a class Keypoint and use Keypoint instead of IKeypoint in the yolo-tiny.yaml file  
 
-2. Run deploy.py, the reparameterized model will be generated
+2. Run deploy.py, the reparameterized model will be generated  
 
-# Export onnx model
+# Export onnx model  
 
 1. Use the reparameterized pytorch model to export onnx model.Need to shield reshap and permute operators like this in the keypoint-related code `class IKeypoint(nn.Module)`
 ```python
@@ -98,5 +100,4 @@ put the image in the test_img dir, run yolov7_trt.py, the output will be saved i
 
 # Result
 ![](assets/person.jpg)
-
 
